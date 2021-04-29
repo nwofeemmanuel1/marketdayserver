@@ -7,6 +7,7 @@ const login=require("./routers/login")
 const protect=require('./hash/protection')
 const User=require('./model/user')
 const listings=require('./routers/listings')
+const cool = require('cool-ascii-faces');
 
 // console.log(User.validatelogin)
 app.use(express.json())
@@ -15,8 +16,10 @@ app.use("/api/register",register )
 app.use("/uploads", express.static('./uploads'))
 
 app.get('/',(req,res)=>{
-    res.send('connected !!')
+    res.send('connected !! hahaha')
 })
+
+  app.get('/cool', (req, res) => res.send(cool()))
 
 app.use("/api/login", login)
 
