@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <img src="" id="image" name="image">
+    <form action="http://localhost:3000/api/files" method="POST">
+    <input type="file" name="filename" id="fileid">
+    <!-- <hr>
+    <input type="submit" value="submit" onclick="handlesubmit()"> -->
+    </form>
+    <a href="/20" >got to 10</a>
+   <script>
+     document.querySelector("#fileid").addEventListener('change',event=>setimage(event))
+     const setimage=async(event)=>{
+       console.log(event.target.files[0])
+       const files=event.target.files
+       const formData=new FormData()
+       formData.append('myfile',files[0])
+       const response=await fetch('http://localhost:3000/api/listings',{
+         method:"POST",
+        //  headers:{'content-type':'multipart'},
+         body: formData,
+// file:JSON.stringify({hello:'hello world'})
+//         //  files:event.target.files[0]
+       })
+       const image=await response.text()
+      //  document.querySelector('#image').src=image
+      console.log(image)
+     }
+   </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+  const express = require("express")
+  const multer = require("multer")
+  const jwt = require('jsonwebtoken')
+  const token = jwt.sign({ id: Math.random(10).toString() }, "jwtprivatekeyonly")
+  const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, './uploads')
+
+    },
+
+    filename: (req, file, cb) => {
+      cb(null, `${Math.random(2945993443 * 537 + 294 + 45).toString()}${file.originalname}`)
+    },
+
+  })
+  const fileFilter = (req, file, cb) => {
+    if (file.mimetype == "image/jpeg" || file.mimetype === "image/png") {
+      cb(null, true)
+      console.log("created a new resource")
+
+    } else {
+      cb(null, false)
+      console.log("unsaved resource recieved")
+    }
+
+    // cb(null,true)
+  }
+
+
+  const uploads = multer({ storage: storage, limits: { filSize: 1024 * 1024 * 5 }, fileFilter: fileFilter })
+
+  const app = express()
+  // app.use(express.urlencoded())
+  app.use("/uploads", express.static("./uploads"))
+  app.use(express.json())
+
+  app.post("/api/files", uploads.any("uploads"), (req, res) => {
+    //  console.log(uploads.single("PRODUCTIMAGE"))
+    res.send(`http://localhost:3000 /${req.files[0].path}`)
+    // console.log(req.files[0].path)
+
+
+  })
+  app.get("/images", (req, res) => {
+    res.send("http://localhost:3000/uploads\0.19254322382417577910a49bde40d98603b6e544b3f9199c3.jpg")
+  })
+  app.post('/', (req, res) => {
+    if (!req.body) return res.status(400).send("bad request")
+    res.send(req.body)
+  })
+
+
+  app.listen(3000, () => console.log("running on port 3000..."))
+
+
+</script> -->
