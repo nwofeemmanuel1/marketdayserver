@@ -1,31 +1,31 @@
-const fetch=require("isomorphic-fetch")
-const fetchuser=async(username,email,pasword)=>{
+// const fetch=require("isomorphic-fetch")
+// const fetchuser=async(username,email,pasword)=>{
 
-try{
-
-
-const response=await fetch("https://marketdayserver.herokuapp.com/api/register",{
-    method:"POST",
-    headers:{"content-type":"application/json"},
-    body:JSON.stringify({
-        username:username,
-        email:email,
-        pasword:pasword
-    })
-})
-
-const result=await response.json()
-console.log(result)
-
-}catch(err){
-    console.log(err.message)
-}
+// try{
 
 
-}
-// "gsgfysygy"
+// const response=await fetch("https://marketdayserver.herokuapp.com/api/register",{
+//     method:"POST",
+//     headers:{"content-type":"application/json"},
+//     body:JSON.stringify({
+//         username:username,
+//         email:email,
+//         pasword:pasword
+//     })
+// })
 
-fetchuser('nwofe Emmanuel','enwofe@gmail.com', 'desolidesk')
+// const result=await response.json()
+// console.log(result)
+
+// }catch(err){
+//     console.log(err.message)
+// }
+
+
+// }
+// // "gsgfysygy"
+
+// fetchuser('nwofe Emmanuel','enwofe@gmail.com', 'desolidesk')
 
 
 
@@ -138,4 +138,10 @@ fetchuser('nwofe Emmanuel','enwofe@gmail.com', 'desolidesk')
 
 
 
-
+const fetch=require('isomorphic-fetch')
+const fetchuser=async()=>{
+  const response=  await fetch('https://marketdayserver.herokuapp.com/')
+  const result=await response.text()
+  console.log(result)
+}
+fetchuser()
