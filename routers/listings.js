@@ -33,31 +33,28 @@ const uploads=multer({storage:storage,fileFilter:filefilter})
 // uploads.any('uploads')
 
 router.post('/', async(req,res)=>{
-    // console.log(req.files)
-    // res.send(req.files)
-    res.send(req.body)
-    
-//   const listingisvalid=  validatelisting(req.body.url,req.body.secondurl,req.body.price,req.body.category,req.body.user)
-//  if(listingisvalid){
-// try{
-// const listing=  await new Listings({
-//       url:`http://localhost:3000/${req.files[0].path}`,
-//         secondurl:req.body.secondurl,
-//        price: req.body.price,
-//       category:  req.body.category,
-//        user: req.body.user
-//   })
-// const result=await listing.save()
-// res.json({message:result,error:false})
-// }catch(err){
-//     res.status(400).json({errMessage:err.message ,error:true})
-// }
+ 
+  const listingisvalid=  validatelisting(req.body.url,req.body.secondurl,req.body.price,req.body.category,req.body.user)
+ if(listingisvalid === true ){
+try{
+const listing=  await new Listings({
+      url:req.body.url,
+        secondurl:req.body.secondurl,
+       price: req.body.price,
+      category:  req.body.category,
+       user: req.body.user
+  })
+const result=await listing.save()
+res.json({message:result,error:false})
+}catch(err){
+    res.status(400).json({errMessage:err.message ,error:true})
+}
 
 
 
-//  }else{
-//      res.json({errMessage:listingisvalid,error:true})
-//  }
+ }else{
+     res.json({errMessage:listingisvalid.errmessage,error:true})
+ }
 
 })
 

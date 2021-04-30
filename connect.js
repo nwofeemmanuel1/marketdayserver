@@ -59,27 +59,27 @@
 
 // }
 
-// fetchuser('enwofe@gmail.com', 'desolidesk' )
+// fetchuser('enwofe@gmail.com','desolidesk'  )
 
 
 
 
 
-// const fetch=require("isomorphic-fetch")
-// const fetchget=async(token)=>{
-// const response=await fetch("http://localhost:3000/api/listings",{
-//     method:"POST",
-//     headers:{"content-type":"application/json"},
-//     body:JSON.stringify({
+const fetch=require("isomorphic-fetch")
+const fetchget=async(token)=>{
+const response=await fetch("http://localhost:5000/api/listings",{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
       
-//        token:token
-//     })
-// })
-// const result=await response.text()
-// console.log(result)
-// }
+       token:token
+    })
+})
+const result=await response.text()
+console.log(result)
+}
 
-// fetchget('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU')
+fetchget('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU')
 
 
 
@@ -122,7 +122,7 @@
 // }
 // // "gsgfysygy"
 
-// fetchuser('any url just for clarity purpose','hahahaaa')
+// fetchuser('https://picsum.photos.io',"nonsense",10,'web','608c00a95b76cf0598620683')
 
 
 // const fetch=require('isomorphic-fetch')
@@ -213,34 +213,55 @@
 
 
 
-const fetch=require("isomorphic-fetch")
-const fetchuser=async(username,email,pasword)=>{
+// const fetch=require("isomorphic-fetch")
+// const fetchuser=async(username,email,pasword)=>{
 
-try{
-
-
-const response=await fetch("http://localhost:5000/api/register",{
-    method:"POST",
-    headers:{"content-type":"application/json"},
-    body:JSON.stringify({
-        username:username,
-        email:email,
-        pasword:pasword
-    })
-})
-
-const result=await response.json()
-console.log(result)
-
-}catch(err){
-    console.log(err.message)
-}
+// try{
 
 
-}
-// "gsgfysygy"
+// const response=await fetch("http://localhost:5000/api/register",{
+//     method:"POST",
+//     headers:{"content-type":"application/json"},
+//     body:JSON.stringify({
+//         username:username,
+//         email:email,
+//         pasword:pasword
+//     })
+// })
 
-fetchuser('nwofe Emmanuel','enwofe2020@gmail.com', 'desolidesk')
+// const result=await response.json()
+// console.log(result)
+
+// }catch(err){
+//     console.log(err.message)
+// }
+
+
+// }
+// // "gsgfysygy"
+
+// fetchuser('nwofe Emmanuel','enwofe2020@gmail.com', 'desolidesk')
 
 
 
+
+
+
+
+
+
+
+
+  // getlistings=async(token)=>{
+  // const response=  await fetch("https://marketdayserver.herokuapp.com/api/listings",{
+  //   method:"POST",
+  //   headers:{"content-type":"application/json"},
+  //   body:JSON.stringify({
+  //     token
+  //   })
+  // })
+  // const result=await response.text()
+  // console.log(result)
+  // }
+
+  // getlistings("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ")

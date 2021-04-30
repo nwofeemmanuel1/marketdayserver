@@ -15,7 +15,7 @@ user:Joi.string().required()
     }
 const result=Joi.validate({url,secondurl,price,category,user},schema)
 
-if(result.error){ return (result.error.details[0].message)
+if(result.error){ return ({ errmessage:result.error.details[0].message,error:true})
 }else{
 return true
 }
