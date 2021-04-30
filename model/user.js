@@ -1,6 +1,6 @@
-
+const config=require('config')
 const mongoose=require("mongoose")
-mongoose.connect("mongodb+srv://playground:desolidboy1@cluster0.vnuog.mongodb.net/marketday", { useNewUrlParser: true,useUnifiedTopology: true })
+mongoose.connect(config.get('connection.url'), { useNewUrlParser: true,useUnifiedTopology: true })
 .then(()=>console.log("connected to mongodb database ..."))
 .catch(err=>console.log("unable to connect to database because" + err.message))
 
@@ -42,40 +42,3 @@ module.exports=User
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const User=mongoose.model("User",userSchema)
-
-// const createNewUser=async()=>{
-// const user=await new User({
-//  username:"nwofe emmanuel",
-//        email:"enwofe2020@gmail.com",
-//        pasword:"dede123456"
-// })
-// const result=await user.save()
-// console.log(result)
-// }
-// // createNewUser()

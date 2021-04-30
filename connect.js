@@ -40,7 +40,7 @@
 // const fetchuser=async(email,pasword)=>{
 //     try{
           
-// const response=await fetch("http://localhost:5000/api/login",{
+// const response=await fetch("https://marketdayserver.herokuapp.com/api/login",{
 //     method:"POST",
 //     headers:{"content-type":"application/json"},
 //     body:JSON.stringify({
@@ -138,10 +138,109 @@
 
 
 
-const fetch=require('isomorphic-fetch')
-const fetchuser=async()=>{
-  const response=  await fetch('https://marketdayserver.herokuapp.com/')
-  const result=await response.text()
-  console.log(result)
+// const fetch=require('isomorphic-fetch')
+// const fetchuser=async()=>{
+//   const response=  await fetch('https://marketdayserver.herokuapp.com/')
+//   const result=await response.text()
+//   console.log(result)
+// }
+// fetchuser()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const fetch=require("isomorphic-fetch")
+
+// const fetchuser=async(email,pasword)=>{
+//     try{
+          
+// const response=await fetch("http://localhost:5000/api/login",{
+//     method:"POST",
+//     headers:{"content-type":"application/json"},
+//     body:JSON.stringify({
+      
+//         email:email,
+//         pasword:pasword
+//     })
+// })
+// const result=await response.json()
+// console.log(result)
+
+
+//     }catch(err){
+//         console.log(err)
+//     }
+
+// }
+
+// fetchuser('enwofe@gmail.com', 'desolidesk' )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const fetch=require("isomorphic-fetch")
+const fetchuser=async(username,email,pasword)=>{
+
+try{
+
+
+const response=await fetch("http://localhost:5000/api/register",{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+        username:username,
+        email:email,
+        pasword:pasword
+    })
+})
+
+const result=await response.json()
+console.log(result)
+
+}catch(err){
+    console.log(err.message)
 }
-fetchuser()
+
+
+}
+// "gsgfysygy"
+
+fetchuser('nwofe Emmanuel','enwofe2020@gmail.com', 'desolidesk')
+
+
+

@@ -21,7 +21,13 @@ if(user){
   const paswordisvalid= await bcrypt.compare(pasword,user.pasword) 
   if(paswordisvalid) {
      const token =  tokengenerator(user._id)
-return {loged_in:true,token:token,error:false}
+return {loged_in:true,token:token,error:false, 
+  user:{
+    date: user.date,
+    username:user.username,
+    email:user.email
+  }
+}
   }else{
 return {loged_in:false, errorMessage:"invalid Email or pasword", error:true}
   }

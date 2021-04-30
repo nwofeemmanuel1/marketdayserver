@@ -1,8 +1,7 @@
-
 const User=require("./user")
-
+const config=require('config')
 const mongoose=require("mongoose")
-mongoose.connect("mongodb+srv://playground:desolidboy1@cluster0.vnuog.mongodb.net/marketday", { useNewUrlParser: true,useUnifiedTopology: true })
+mongoose.connect(config.get("connection.url"), { useNewUrlParser: true,useUnifiedTopology: true })
 .then(()=>console.log("connected to mongodb database ..."))
 .catch(err=>console.log("unable to connect to database because" + err.message))
 

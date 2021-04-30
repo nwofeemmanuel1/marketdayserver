@@ -16,7 +16,7 @@ app.use("/api/register",register )
 app.use("/uploads", express.static('./uploads'))
 
 app.get('/',(req,res)=>{
-    res.send('connected !! hahaha')
+    res.send('connected !! hahaha i did it again')
 })
 
   app.get('/cool', (req, res) => res.send(cool()))
