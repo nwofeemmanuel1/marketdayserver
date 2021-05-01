@@ -1,7 +1,7 @@
 const express=require("express")
 const app=express()
 const display=require("./functions/display")
-const Listings= require("./model/listing")
+// const Listings= require("./model/listing")
 const register=require("./routers/register")
 const login=require("./routers/login")
 const protect=require('./hash/protection')
@@ -16,7 +16,7 @@ app.use("/api/register",register )
 app.use("/uploads", express.static('./uploads'))
 
 app.get('/',(req,res)=>{
-    res.send('connected !! hahaha i did it again')
+    res.send('marketday is coming !!!!')
 })
 
   app.get('/cool', (req, res) => res.send(cool()))

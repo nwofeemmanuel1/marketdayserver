@@ -101,7 +101,7 @@ const fetch=require("isomorphic-fetch")
  try{
 
 
- const response=await fetch("http://localhost:5000/api/users/listings",{
+ const response=await fetch("https://marketdayserver.herokuapp.com/api/users/listings",{
     method:"POST",
   headers:{"content-type":"application/json"},
    body:JSON.stringify({
@@ -128,7 +128,7 @@ console.log(result)
 }
 // "gsgfysygy"
 
-fetchuser(10,20,"string",'seller','source',10,'web','608c00a95b76cf0598620683')
+fetchuser(1,50,"car",'nwofe emmanuel','https://picsum.photos/200/300?grayscale',50,'web','608c00a95b76cf0598620683')
 
 
 // const fetch=require('isomorphic-fetch')

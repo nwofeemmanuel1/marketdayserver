@@ -27,12 +27,14 @@ const uploads=multer({storage:storage,fileFilter:filefilter})
 
 
 
-
+router.post('/post',uploads.any("myFile"),(req,res)=>{
+console.log(req.files)
+})
 
 
 // uploads.any('uploads')
 
-router.post('/', async(req,res)=>{
+router.post('/' ,async(req,res)=>{
 
   const listingisvalid=  validatelisting(req.body.itemNumber,req.body.price,req.body.name,req.body.seller,req.body.source,req.body.prevprice,req.body.category, req.body.user,)
  if(listingisvalid === true ){

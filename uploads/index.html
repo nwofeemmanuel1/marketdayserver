@@ -1,119 +1,38 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <form>
-        <input type="file" name="filename" id="fileid">
-    </form>
+    <input type="file" id="fileUpload" />
     <script>
-        document.querySelector("#fileid").addEventListener('change', (event) => handlesubmit(event))
-        const handlesubmit = async (event) => {
-            console.log(event.target.files[0])
-            const files = event.target.files
-            const formdata = new FormData()
-            formdata.append('myFile', files[0])
+        const handleImageUpload = event => {
+                const files = event.target.files
+                const formData = new FormData()
+                formData.append('myFile', files[0])
 
-            const fetchuser = await fetch("http://localhost:3000/api/users/listings", {
-                method: "POST",
-                // headers:{'content-type':'multipart'},
-                body: formdata
+                fetch('/api/users/listings/post', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data.path)
+                    })
+                    .catch(error => {
+                        console.error(error)
+                    })
+            }
+
+            document.querySelector('#fileUpload').addEventListener('change', event => {
+                handleImageUpload(event)
             })
-
-
-            const result = await fetchuser.text()
-            console.log(result)
-
-
-        }
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
