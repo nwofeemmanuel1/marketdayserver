@@ -28,7 +28,12 @@ const userSchema=new mongoose.Schema({
     date:{
         type:Date,
         default:Date.now()
-    }
+    },
+    balance:Number,
+    sales:Array,
+    purchase:Array
+    
+    
    
 })
   

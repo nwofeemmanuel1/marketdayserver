@@ -27,7 +27,7 @@ app.post("/api/listings",protect,async(req,res)=>{
 try{
       const result= await display()
     
-  if(!result || result.length <=0) return res.send("please no one has placed a listing on the app so far") 
+    if(!result || result.length <=0) return res.send({errMessage: "please no one has placed a listing on the app so far", error:true }) 
   res.send(result)
 }catch(error){
     console.log(error.message)
