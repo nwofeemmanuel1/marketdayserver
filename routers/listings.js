@@ -33,16 +33,24 @@ const uploads=multer({storage:storage,fileFilter:filefilter})
 // uploads.any('uploads')
 
 router.post('/', async(req,res)=>{
- 
-  const listingisvalid=  validatelisting(req.body.url,req.body.secondurl,req.body.price,req.body.category,req.body.user)
+
+  const listingisvalid=  validatelisting(req.body.itemNumber,req.body.price,req.body.name,req.body.seller,req.body.source,req.body.prevprice,req.body.category, req.body.user,)
  if(listingisvalid === true ){
+    //  res.send("validated")
+
 try{
 const listing=  await new Listings({
-      url:req.body.url,
-        secondurl:req.body.secondurl,
-       price: req.body.price,
-      category:  req.body.category,
-       user: req.body.user
+     
+   itemNumber:req.body.itemNumber,
+        price:req.body.price,
+        name:req.body.name,
+         seller: req.body.seller,
+          source: req.body.source,
+        prevprice:req.body.prevprice,
+         category:req.body.category,
+        user:req.body.user,
+       
+        // sellerid: 1 
   })
 const result=await listing.save()
 res.json({message:result,error:false})
@@ -53,7 +61,7 @@ res.json({message:result,error:false})
 
 
  }else{
-     res.json({errMessage:listingisvalid.errmessage,error:true})
+     res.json({errMessage:listingisvalid,error:true})
  }
 
 })

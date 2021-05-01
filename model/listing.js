@@ -7,34 +7,84 @@ mongoose.connect(config.get("connection.url"), { useNewUrlParser: true,useUnifie
 
 
 const listingSchema=new mongoose.Schema({
-url:{
-    type:String,
-    required:true
-},
-secondurl:{
-    type:String,  
-    // required:true
-},
-
-price:{
+itemNumber:{
     type:Number,
     required:true,
     min:0
 },
-category:{
+price:{
+    type:Number,
+    required:true
+},
+name:{
+    type:String,
+    required:true
+},
+seller:{
+    type:String,
+  required:true
+},
+source:{
+    type:String,
+    required:true,
+    max:1024
+},
+ prevprice:{
+     type:Number,
+     rquired:true
+ },
+ category:{
     type:String,
     enum:["web","site", "dev"]
 },
-user:{
+ user:{
     type:mongoose.Schema.Types.ObjectId,
 ref:"User",
 // required:true
 },
 Date:{
     type:Date,
-    default:Date.now()}
-})
+    default:Date.now()
+}
 
+
+})
+// url:{
+//     type:String,
+//     required:true
+// },
+// secondurl:{
+//     type:String,  
+//     // required:true
+// },
+
+// price:{
+//     type:Number,
+//     required:true,
+//     min:0
+// },
+// category:{
+//     type:String,
+//     enum:["web","site", "dev"]
+// },
+// user:{
+//     type:mongoose.Schema.Types.ObjectId,
+// ref:"User",
+// // required:true
+// },
+// Date:{
+//     type:Date,
+//     default:Date.now()}
+
+//    ItemNumber: Joi.number().min(0),
+//         price:Joi.number().min(0).required(),
+//         name:Joi.string().min(3).required,
+//          seller: Joi.strng().required,
+//           source: Joi.string().required(),
+//         prevprice: Joi.number().required(),
+//         user:Joi.string().required(),
+//         category:Joi.string().max(9).required(),
+//         // sellerid: 1 
 const Listings=mongoose.model("Listing", listingSchema)
 module.exports=Listings
 

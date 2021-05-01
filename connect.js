@@ -65,64 +65,70 @@
 
 
 
-const fetch=require("isomorphic-fetch")
-const fetchget=async(token)=>{
-const response=await fetch("http://localhost:5000/api/listings",{
-    method:"POST",
-    headers:{"content-type":"application/json"},
-    body:JSON.stringify({
-      
-       token:token
-    })
-})
-const result=await response.text()
-console.log(result)
-}
-
-fetchget('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU')
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const fetch=require("isomorphic-fetch")
-// const fetchuser=async(url, secondurl,price,category,user)=>{
-
-// try{
-
-
-// const response=await fetch("http://localhost:5000/api/users/listings",{
+// const fetchget=async(token)=>{
+// const response=await fetch("http://localhost:5000/api/listings",{
 //     method:"POST",
 //     headers:{"content-type":"application/json"},
 //     body:JSON.stringify({
-//        url,
-//        secondurl,
-//       price,
-//        category,
-//        user
+      
+//        token:token
 //     })
 // })
-
-// const result=await response.json()
+// const result=await response.text()
 // console.log(result)
-
-// }catch(err){
-//     console.log(err.message)
 // }
 
+// fetchget('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU')
 
-// }
-// // "gsgfysygy"
 
-// fetchuser('https://picsum.photos.io',"nonsense",10,'web','608c00a95b76cf0598620683')
+
+
+
+
+
+
+
+
+
+
+// "https://marketdayserver.herokuapp.com/api/users/listings"
+
+
+const fetch=require("isomorphic-fetch")
+ const fetchuser=async( itemNumber,price,name ,seller,source,prevprice,category,user)=>{
+
+ try{
+
+
+ const response=await fetch("http://localhost:5000/api/users/listings",{
+    method:"POST",
+  headers:{"content-type":"application/json"},
+   body:JSON.stringify({
+        itemNumber,
+        price,
+        name,
+         seller,
+          source,
+        prevprice,
+          category,
+        user,
+      
+    })
+})
+
+const result=await response.text()
+console.log(result)
+
+}catch(err){
+    console.log(err.message)
+}
+
+
+}
+// "gsgfysygy"
+
+fetchuser(10,20,"string",'seller','source',10,'web','608c00a95b76cf0598620683')
 
 
 // const fetch=require('isomorphic-fetch')
@@ -251,17 +257,17 @@ fetchget('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkM
 
 
 
+// const fetch=require('isomorphic-fetch')
+//   getlistings=async(token)=>{
+//   const response=  await fetch("https://marketdayserver.herokuapp.com/api/listings",{
+//     method:"POST",
+//     headers:{"content-type":"application/json"},
+//     body:JSON.stringify({
+//       token
+//     })
+//   })
+//   const result=await response.json()
+//   console.log(result)
+//   }
 
-  // getlistings=async(token)=>{
-  // const response=  await fetch("https://marketdayserver.herokuapp.com/api/listings",{
-  //   method:"POST",
-  //   headers:{"content-type":"application/json"},
-  //   body:JSON.stringify({
-  //     token
-  //   })
-  // })
-  // const result=await response.text()
-  // console.log(result)
-  // }
-
-  // getlistings("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ")
+//   getlistings("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ")
