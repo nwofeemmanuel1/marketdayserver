@@ -23,9 +23,13 @@ if(user){
      const token =  tokengenerator(user._id)
 return {loged_in:true,token:token,error:false, 
   user:{
-    date: user.date,
+       date: user.date,
     username:user.username,
-    email:user.email
+    email:user.email,
+    userIcon:user.userIcon,
+     balance:user.balance,
+    sales:user.sales,
+    purchase:user.purchase,
   }
 }
   }else{
