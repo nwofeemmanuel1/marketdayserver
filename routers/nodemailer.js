@@ -26,18 +26,16 @@ const mailOptions={
 
 transporter.sendMail(mailOptions,function(error,info){
     if(error){
-        console.log(error.message)
+       return error.message
     }else{
-        console.log("email sent successfully with staus code : " +info.response)
+        console.log ("email sent successfully with staus code : " +info.response)
     }
 })
 
+return "yea"
 
 }
-
-sendemail('enwofe2021@gmail.com','Wow Am happy to use nodemailer and send file','well i have actually made the nodemailer email support working on my computer and am happy to send u email with it')
-
-
+module.exports=sendemail
 
 // const config=require('config')
 // console.log(config.get('connection.url'))

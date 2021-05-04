@@ -2,6 +2,10 @@
   
     "connection":{
         "url":"mongodb+srv://playground:desolidboy1@cluster0.vnuog.mongodb.net/marketday"
+    },
+    "mailoptions":{
+       "email":"enwofe042@gmail.com",
+        "pasword":"desolidboy1"
     }
 }
 

@@ -2,5 +2,9 @@
 
     "connection":{
         "url":"mongodb://localhost:27017/marketday"
+    },
+     "mailoptions":{
+       "email":"enwofe042@gmail.com",
+        "pasword":"desolidboy1"
     }
 }
