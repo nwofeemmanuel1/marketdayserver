@@ -128,7 +128,7 @@
 // }
 // // "gsgfysygy"
 
-// fetchuser(1,50,"car",'nwofe emmanuel','https://picsum.photos/200/300?grayscale',50,'web','608c00a95b76cf0598620683')
+// fetchuser(1,50,"car",'nwofe emmanuel','https://picsum.photos/200/300?grayscale',50,'web',"60913bad7e99a10022c717ba")
 
 
 // const fetch=require('isomorphic-fetch')
@@ -219,58 +219,58 @@
 
 
 
-const fetch=require("isomorphic-fetch")
-const fetchuser=async(username,email,pasword)=>{
+// const fetch=require("isomorphic-fetch")
+// const fetchuser=async(username,email,pasword)=>{
 
-try{
-
-
-const response=await fetch("http://localhost:5000/api/register",{
-    method:"POST",
-    headers:{"content-type":"application/json"},
-    body:JSON.stringify({
-        username:username,
-        email:email,
-        pasword:pasword
-    })
-})
-
-const result=await response.json()
-console.log(result)
-
-}catch(err){
-    console.log(err.message)
-}
+// try{
 
 
-}
-// "gsgfysygy"
-
-fetchuser('nwofe Emmanuel','enwofe2020@gmail.com', 'desolidesk')
-
-
-
-
-
-
-
-
-
-
-// const fetch=require('isomorphic-fetch')
-//   getlistings=async(token)=>{
-//   const response=  await fetch("https://marketdayserver.herokuapp.com/api/listings",{
+// const response=await fetch("http://localhost:5000/api/register",{
 //     method:"POST",
 //     headers:{"content-type":"application/json"},
 //     body:JSON.stringify({
-//       token
+//         username:username,
+//         email:email,
+//         pasword:pasword
 //     })
-//   })
-//   const result=await response.json()
-//   console.log(result)
-//   }
+// })
 
-//   getlistings("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ")
+// const result=await response.json()
+// console.log(result)
+
+// }catch(err){
+//     console.log(err.message)
+// }
+
+
+// }
+// // "gsgfysygy"
+
+// fetchuser('nwofe Emmanuel','enwofe2020@gmail.com', 'desolidesk')
+
+
+
+
+
+
+
+
+
+
+const fetch=require('isomorphic-fetch')
+  getlistings=async(token)=>{
+  const response=  await fetch("http://localhost:5000/api/listings",{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+      token
+    })
+  })
+  const result=await response.json()
+  console.log(result)
+  }
+
+  getlistings("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ")
 
 
 
