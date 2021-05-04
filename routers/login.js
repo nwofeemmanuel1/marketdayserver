@@ -23,6 +23,7 @@ if(user){
      const token =  tokengenerator(user._id)
 return {loged_in:true,token:token,error:false, 
   user:{
+      id:user._id,
        date: user.date,
     username:user.username,
     email:user.email,
@@ -30,6 +31,7 @@ return {loged_in:true,token:token,error:false,
      balance:user.balance,
     sales:user.sales,
     purchase:user.purchase,
+
   }
 }
   }else{

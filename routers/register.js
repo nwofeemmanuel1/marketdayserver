@@ -29,14 +29,15 @@ const newuser=await new User({
 const user=await newuser.save()
 const token=generateToken( user._id)
 return {registerd:true,token:token, message:`created a user account for ${username}` , error:false, user:{
-      date: user.date,
+      id:user._id,
+    date: user.date,
     username:user.username,
     email:user.email,
     userIcon:user.userIcon,
      balance:user.balance,
     sales:user.sales,
     purchase:user.purchase,
-  
+
 }}
    }catch(error){
        return{errMessage:error.message, error:true}
