@@ -8,20 +8,24 @@ const protect=require('./hash/protection')
 const User=require('./model/user')
 const listings=require('./routers/listings')
 const cool = require('cool-ascii-faces');
-
+const sales=require('./routers/sales')
 // console.log(User.validatelogin)
 app.use(express.json())
+
+app.use("/uploads", express.static('./uploads'))
+
 app.use('/api/users/listings',listings)
 app.use("/api/register",register )
-app.use("/uploads", express.static('./uploads'))
+
+app.use("/api/login", login)
+
+  app.get('/cool', (req, res) => res.send(cool()))
+  
+  app.use("/api/listings/sales", sales)
 
 app.get('/',(req,res)=>{
     res.send('marketday is coming !!!!')
 })
-
-  app.get('/cool', (req, res) => res.send(cool()))
-
-app.use("/api/login", login)
 
 app.post("/api/listings",protect,async(req,res)=>{
 try{
@@ -33,6 +37,7 @@ try{
     console.log(error.message)
 }
 })
+
 
 
 const port=process.env.PORT || 5000
