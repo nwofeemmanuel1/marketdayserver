@@ -31,7 +31,10 @@ const userSchema=new mongoose.Schema({
     },
     balance:Number,
     sales:Array,
-    purchase:Array
+    purchase:Array,
+    
+    country:String,
+    phone:Number
     
     
    

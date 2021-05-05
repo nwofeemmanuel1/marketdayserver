@@ -59,7 +59,7 @@ const fetchuser=async(subject,text,reciever,token,)=>{
 try{
 
 
-const response=await fetch("http://localhost:5000/api/seller/mail",{
+const response=await fetch("https://marketdayserver.herokuapp.com/api/seller/mail",{
     method:"POST",
     headers:{"content-type":"application/json"},
     body:JSON.stringify({
@@ -82,7 +82,7 @@ console.log(result)
 }
 // "gsgfysygy"
 
-fetchuser('nodemailer and express','just trying to know if it works', 'enwofe2021@gmail.com')
+fetchuser('nodemailer and express on the web','chidera if this works i will be glad', 'enwofe2021@gmail.com')
 
 
 

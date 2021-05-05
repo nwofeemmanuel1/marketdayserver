@@ -9,7 +9,7 @@ const verifiedtoken=jwt.verify(token,'jwtprivatekey')
 next()
     }catch(err){
 
-     res.status(404).send({errMessage:`${err.message} please login to access this api`, error:true})
+     res.status(404).send({errMessage:`${err.message} invalid token please login to access this api`, error:true})
     }
 
 }else{

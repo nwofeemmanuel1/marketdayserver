@@ -126,20 +126,29 @@
 
 
 // }
-// // "gsgfysygy"
+// "gsgfysygy"
 
-// fetchuser(1,50,"car",'nwofe emmanuel','https://picsum.photos/200/300?grayscale',50,'web',"60913bad7e99a10022c717ba")
+// fetchuser(2,75,"pet",'despacito','https://picsum.photos/seed/picsum/200/300',75,'web',"60913bad7e99a10022c717ba")
 
 
-// const fetch=require('isomorphic-fetch')
-// const fetchuser=async()=>{
-// const response=await fetch('http://localhost:5000')
-// const result= await response.text()
-// console.log(result)
-// }
+const fetch=require('isomorphic-fetch')
+const fetchuser=async(token,email,country,phone,)=>{
+const response=await fetch('http://localhost:5000/api/user/update',{
+  method:"PUT",
+  headers:{"content-type":"application/json"},
+  body:JSON.stringify({
+    token:token,
+       email:email, 
+    country,
+    phone,
 
-// fetchuser()
+  })
+})
+const result= await response.json()
+console.log(result)
+}
 
+fetchuser('invalidtoken', 'enwofe2020@gmail.com','nigeria', 08060304393)
 
 
 
@@ -257,20 +266,20 @@
 
 
 
-const fetch=require('isomorphic-fetch')
-  getlistings=async(token)=>{
-  const response=  await fetch("http://localhost:5000/api/listings",{
-    method:"POST",
-    headers:{"content-type":"application/json"},
-    body:JSON.stringify({
-      token
-    })
-  })
-  const result=await response.json()
-  console.log(result)
-  }
+// const fetch=require('isomorphic-fetch')
+//   getlistings=async(token)=>{
+//   const response=  await fetch("http://localhost:5000/api/listings",{
+//     method:"POST",
+//     headers:{"content-type":"application/json"},
+//     body:JSON.stringify({
+//       token
+//     })
+//   })
+//   const result=await response.json()
+//   console.log(result)
+//   }
 
-  getlistings("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ")
+//   getlistings("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ")
 
 
 
