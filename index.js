@@ -11,6 +11,7 @@ const cool = require('cool-ascii-faces');
 const sales=require('./routers/sales')
 const mailer=require("./routers/sendmail")
 const updateuser=require('./routers/updateuser')
+const updateuserbalance=require("./routers/arithmetics")
 // console.log(User.validatelogin)
 app.use(express.json())
 
@@ -27,6 +28,7 @@ app.use("/api/login", login)
 
 app.use('/api/seller/mail',mailer)
 app.use('/api/user/update',updateuser)
+app.use('/api/users/balance',updateuserbalance)
 
 app.get('/',(req,res)=>{
     res.send('marketday is coming !!!!')
