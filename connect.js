@@ -134,24 +134,28 @@
 // https://marketdayserver.herokuapp.com
 
 const fetch=require('isomorphic-fetch')
-const fetchuser=async(token,email,balance)=>{
-const response=await fetch('http://localhost:5000/api/users/balance',{
+const fetchuser=async(token,email,cardnumber,expirydate,csv,amount)=>{
+const response=await fetch('http://localhost:5000/api/users/deposit',{
   method:"PUT",
   headers:{"content-type":"application/json"},
   body:JSON.stringify({
-    token:token,
-       email:email, 
-       balance:balance
+    token,
+    email,
+ cardnumber,
+     
+     expirydate,
+     csv,
+     amount
     // country,
     // phone,
 
   })
 })
-const result= await response.json()
+const result= await response.text()
 console.log(result)
 }
 
-fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com',50)
+fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com',16,22/2/7,224,20)
 
 
 

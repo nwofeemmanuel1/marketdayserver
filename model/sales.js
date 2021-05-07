@@ -2,7 +2,7 @@ const mongoose=require('mongoose')
 const config=require("config")
 mongoose.connect(config.get('connection.url'), { useNewUrlParser: true,useUnifiedTopology: true })
 .then(()=>console.log("connected to user database ") )
-.catch(err=>console.log(err.message) )
+.catch(err=>console.log(err) )
 
 const salesSchema=new mongoose.Schema({
     seller:{

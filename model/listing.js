@@ -3,7 +3,7 @@ const config=require('config')
 const mongoose=require("mongoose")
 mongoose.connect(config.get("connection.url"), { useNewUrlParser: true,useUnifiedTopology: true })
 .then(()=>console.log("connected to mongodb database ..."))
-.catch(err=>console.log("unable to connect to database because" + err.message))
+.catch(err=>console.log("unable to connect to database because" + err))
 
 
 const listingSchema=new mongoose.Schema({
