@@ -23,7 +23,7 @@ if(isvalid===true){
 
 
         } else{
-            res.status.json({
+            res.status(403).json({
                 errMessage:"invalid user please try with another account",
                 error:true
             })
