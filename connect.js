@@ -131,6 +131,8 @@
 // fetchuser(2,75,"pet",'despacito','https://picsum.photos/seed/picsum/200/300',75,'web',"60913bad7e99a10022c717ba")
 
 
+// https://marketdayserver.herokuapp.com
+
 const fetch=require('isomorphic-fetch')
 const fetchuser=async(token,email,balance)=>{
 const response=await fetch('http://localhost:5000/api/users/balance',{
@@ -334,7 +336,7 @@ fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAy
 // const fetchuser=async(username,email,pasword)=>{
 
 // try{
-// // https://marketdayserver.herokuapp.com
+// https://marketdayserver.herokuapp.com
 
 // const response=await fetch("https://marketdayserver.herokuapp.com/api/register",{
 //     method:"POST",
