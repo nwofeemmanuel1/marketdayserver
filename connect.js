@@ -133,29 +133,29 @@
 
 // https://marketdayserver.herokuapp.com
 
-const fetch=require('isomorphic-fetch')
-const fetchuser=async(token,email,cardnumber,expirydate,csv,amount)=>{
-const response=await fetch('http://localhost:5000/api/users/deposit',{
-  method:"PUT",
-  headers:{"content-type":"application/json"},
-  body:JSON.stringify({
-    token,
-    email,
- cardnumber,
+// const fetch=require('isomorphic-fetch')
+// const fetchuser=async(token,email,cardnumber,expirydate,csv,amount)=>{
+// const response=await fetch('http://localhost:5000/api/users/deposit',{
+//   method:"PUT",
+//   headers:{"content-type":"application/json"},
+//   body:JSON.stringify({
+//     token,
+//     email,
+//  cardnumber,
      
-     expirydate,
-     csv,
-     amount
-    // country,
-    // phone,
+//      expirydate,
+//      csv,
+//      amount
+//     // country,
+//     // phone,
 
-  })
-})
-const result= await response.text()
-console.log(result)
-}
+//   })
+// })
+// const result= await response.text()
+// console.log(result)
+// }
 
-fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com',16,22/2/7,224,"20")
+// fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com',16,22/2/7,224,"20")
 
 
 
@@ -183,7 +183,7 @@ fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAy
 // console.log(result)
 // }
 
-// fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe2020@gmail.com',866)
+// fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe2020@gmail.com',214)
 
 
 
@@ -199,6 +199,34 @@ fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAy
 
 
 
+
+
+
+const fetch=require("isomorphic-fetch")
+
+const fetchuser=async(token,email)=>{
+    try{
+          
+const response=await fetch("http://localhost:5000/api/user/viewbalance",{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+      token:token,
+        email:email,
+
+    })
+})
+const result=await response.json()
+console.log(result)
+
+
+    }catch(err){
+        console.log(err)
+    }
+
+}
+
+fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com')
 
 
 
