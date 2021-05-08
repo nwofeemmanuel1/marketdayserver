@@ -15,7 +15,7 @@ if(isvalid===true){
                 // res.json({message:user, error:false})
 
   user.set({
-                    balance: user.balance += req.body.amount
+                    balance: user.balance += parseInt( req.body.amount)
           })
                 const result = await user.save()
                 // `success balance updated to $${result.balance}`

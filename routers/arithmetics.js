@@ -12,9 +12,9 @@ router.put("/", protectRoute, async (req, res) => {
             const user = await User.findOne({ email: req.body.email })
             if (user) {
                 // res.json({message:user, error:false})
-if(user.balance >= req.body.balance){
+if(user.balance >= parseInt(req.body.balance)){
   user.set({
-                    balance: user.balance - req.body.balance
+                    balance: user.balance - parseInt(req.body.balance)
           })
                 const result = await user.save()
                 // `success balance updated to $${result.balance}`
