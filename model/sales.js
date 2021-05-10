@@ -1,5 +1,6 @@
 const mongoose=require('mongoose')
 const config=require("config")
+const Listing=require('./listing')
 mongoose.connect(config.get('connection.url'), { useNewUrlParser: true,useUnifiedTopology: true })
 .then(()=>console.log("connected to user database ") )
 .catch(err=>console.log(err) )
@@ -15,10 +16,10 @@ const salesSchema=new mongoose.Schema({
         required:true,
           maxlength:120
     },
-  product:{
-      type:Array,
-      required:true,
-  },
+  Listing:{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"Listing"
+},
   date:{
     type:Date,
     default:Date.now()

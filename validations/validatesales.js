@@ -1,13 +1,13 @@
 const Joi=require("joi")
 
-const validatesales=(seller,buyer,product)=>{
+const validatesales=(seller,buyer,Listing)=>{
 const schema={
     seller:Joi.string().email().required(),
     buyer:Joi.string().email().required(),
-    product:Joi.array().required(),
+    Listing:Joi.string().required(),
 
 }
-const result=Joi.validate({seller,buyer,product},schema)
+const result=Joi.validate({seller,buyer,Listing},schema)
 
 
 if(result.error){return (result.error.details[0].message)
