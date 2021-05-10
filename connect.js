@@ -202,21 +202,57 @@
 
 
 
+// const fetch=require("isomorphic-fetch")
+
+// const fetchuser=async(token,email,username,country,phone)=>{
+//     try{
+          
+// const response=await fetch("http://localhost:5000/api/user/update",{
+//     method:"PUT",
+//     headers:{"content-type":"application/json"},
+//     body:JSON.stringify({
+//    token:token,
+//         email:email,
+// username:username,
+// country:country,
+// phone:phone
+
+//     })
+// })
+// const result=await response.text()
+// console.log(result)
+
+
+//     }catch(err){
+//         console.log(err)
+//     }
+
+// }
+
+// fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com','nwofe chiemelie',"niger",08060304393)
+
+
+
+
+
+
+
 const fetch=require("isomorphic-fetch")
 
-const fetchuser=async(token,email)=>{
+const fetchuser=async(token,email,)=>{
     try{
           
-const response=await fetch("http://localhost:5000/api/user/viewbalance",{
+const response=await fetch("http://localhost:5000/api/user/update/me",{
     method:"POST",
     headers:{"content-type":"application/json"},
     body:JSON.stringify({
-      token:token,
+   token:token,
         email:email,
+
 
     })
 })
-const result=await response.json()
+const result=await response.text()
 console.log(result)
 
 
@@ -226,8 +262,7 @@ console.log(result)
 
 }
 
-fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com')
-
+fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com','nwofe chiemelie',)
 
 
 
