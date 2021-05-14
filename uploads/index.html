@@ -1,53 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <input type="file" id="fileUpload" />
     <script>
-        const handleImageUpload = event => {
-                const files = event.target.files
-                const formData = new FormData()
-                formData.append('myFile', files[0])
+        const handleImageUpload = async (event) => {
+            // console.log(event.target.files[0])
+            const files = event.target.files
+            const formData = new FormData()
+            formData.append('myFile', files[0])
 
-                fetch('/api/users/listings/post', {
-                    method: 'POST',
-                    body: formData
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log(data.path)
-                    })
-                    .catch(error => {
-                        console.error(error)
-                    })
-            }
-
-            document.querySelector('#fileUpload').addEventListener('change', event => {
-                handleImageUpload(event)
+            const response = await fetch('/api/list', {
+                method: 'POST',
+                body: formData
             })
+
+            const result = await response.text()
+            console.log(result)
+
+        }
+
+        document.querySelector('#fileUpload').addEventListener('change', event => {
+            handleImageUpload(event)
+        })
     </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

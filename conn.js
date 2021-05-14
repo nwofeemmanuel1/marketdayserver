@@ -37,36 +37,40 @@
 
 
 
-const fetch=require("isomorphic-fetch")
-const fetchuser=async(token,buyer)=>{
+// const fetch=require("isomorphic-fetch")
+// const fetchuser=async(token,seller)=>{
 
-try{
+// try{
 
 
-const response=await fetch("http://localhost:5000/api/listings/sales/viewpurchase",{
-    method:"POST",
-    headers:{"content-type":"application/json"},
-    body:JSON.stringify({
-        token:token,
-        buyer:buyer,
+// const response=await fetch("https://marketdayserver.herokuapp.com/api/listings/sales/viewsales",{
+//     method:"POST",
+//     headers:{"content-type":"application/json"},
+//     body:JSON.stringify({
+//         token:token,
+//         seller:seller,
        
         
-    })
-})
+//     })
+// })
 
-const result=await response.json()
+// const result=await response.json()
+// if(result.error==true){
+//     console.log(result)
+// }else{
+//     console.log(result.message)
+// }
+// // console.log(result)
 
-console.log(result.message)
-
-}catch(err){
-    console.log(err.message)
-}
+// }catch(err){
+//     console.log(err.message)
+// }
 
 
-}
-// "gsgfysygy"
+// }
+// // "gsgfysygy"
 
-fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU",'marketday@gmail.com')
+// fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU",'marketday@gmail.com')
 
 
 
@@ -113,6 +117,41 @@ fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThk
 // // "gsgfysygy"
 
 // fetchuser('nodemailer and express on the web','chidera if this works i will be glad', 'enwofe2021@gmail.com')
+
+
+
+
+
+
+
+
+
+
+const fetch=require("isomorphic-fetch")
+const fetchuser=async()=>{
+
+
+
+
+const response=await fetch("http://localhost:5000" )
+
+
+const result=await response.text()
+console.log(result)
+
+}
+// "gsgfysygy"
+
+fetchuser()
+
+
+
+
+
+
+
+
+
 
 
 

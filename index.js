@@ -14,8 +14,11 @@ const updateuser=require('./routers/updateuser')
 const updateuserbalance=require("./routers/arithmetics")
 const deposit=require("./routers/deposit")
 const viewbalance=require('./routers/viewbalance')
+const list=require('./routers/list')
 // console.log(User.validatelogin)
 app.use(express.json())
+
+app.use('/api/list',list)
 
 app.use("/uploads", express.static('./uploads'))
 
@@ -33,6 +36,9 @@ app.use('/api/user/update',updateuser)
 app.use('/api/users/balance',updateuserbalance)
 app.use('/api/users/deposit',deposit)
 app.use('/api/user/viewbalance',viewbalance)
+
+
+
 app.get('/',(req,res)=>{
     res.send('marketday is coming !!!!')
 })
@@ -52,3 +58,6 @@ try{
 
 const port=process.env.PORT || 5000
 app.listen(port, ()=>console.log("running..."))
+
+
+
