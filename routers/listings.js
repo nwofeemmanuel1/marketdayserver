@@ -28,7 +28,7 @@ const uploads = multer({ storage: storage, fileFilter: filefilter })
 
 
 router.post('/post', uploads.any("myFile"), (req, res) => {
-   res.send('created' + req.files[0].filename)
+   res.send('created' + req.files)
 
 })
 
