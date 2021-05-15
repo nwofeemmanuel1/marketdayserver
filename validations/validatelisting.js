@@ -4,21 +4,17 @@
 
 const Joi=require("joi")
 
-function validatelisting(itemNumber,price,name,  seller,source,prevprice,category,user){
-
-
+function validatelisting(seller,itemName,description,price,category){
 const schema={
-    itemNumber:Joi.number().min(0).required(),
-    price:Joi.number().min(0).required(),
-    name:Joi.string().min(3).required(),
-    seller:Joi.string().required(),
-    source:Joi.string().max(1024).required(),
-    prevprice:Joi.number().min(0).required(),
-    category:Joi.string().min(3).required(),
-    user:Joi.string().required(),
-    // userIcon:Joi.string()
+ 
+    seller:Joi.string().email().required(),
+    itemName:Joi.string().required(),
+    description:Joi.string().required(),
+    price:Joi.number().required().min(0),
+    category:Joi.string().required(),
+ 
 }
-const result=Joi.validate({itemNumber:itemNumber,price:price, name:name,seller:seller,source:source,prevprice:prevprice,category:category,user:user},schema)
+const result=Joi.validate({seller,itemName,description,price,category},schema)
 
 if(result.error){ return result.error.details[0].message
 }

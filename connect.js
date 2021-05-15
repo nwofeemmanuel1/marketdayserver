@@ -95,40 +95,38 @@
 // "https://marketdayserver.herokuapp.com/api/users/listings"
 
 
-// const fetch=require("isomorphic-fetch")
-//  const fetchuser=async( itemNumber,price,name ,seller,source,prevprice,category,user)=>{
+const fetch=require("isomorphic-fetch")
+ const fetchuser=async( token,seller,itemName,description,price,category)=>{
 
-//  try{
+ try{
 
 
-//  const response=await fetch("https://marketdayserver.herokuapp.com/api/users/listings",{
-//     method:"POST",
-//   headers:{"content-type":"application/json"},
-//    body:JSON.stringify({
-//         itemNumber,
-//         price,
-//         name,
-//          seller,
-//           source,
-//         prevprice,
-//           category,
-//         user,
+ const response=await fetch("http://localhost:5000/api/users/listings",{
+    method:"POST",
+  headers:{"content-type":"application/json"},
+   body:JSON.stringify({
+       token,
+     seller,
+     itemName,
+     description,
+     price,
+     category  
       
-//     })
-// })
+    })
+})
 
-// const result=await response.text()
-// console.log(result)
+const result=await response.json()
+console.log(result)
 
-// }catch(err){
-//     console.log(err.message)
-// }
+}catch(err){
+    console.log(err.message)
+}
 
 
-// }
-// "gsgfysygy"
+}
+"gsgfysygy"
 
-// fetchuser(2,75,"pet",'despacito','https://picsum.photos/seed/picsum/200/300',75,'web',"60913bad7e99a10022c717ba")
+fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com',"shoes",'my first item',"20",'web')
 
 
 // https://marketdayserver.herokuapp.com
@@ -237,32 +235,32 @@
 
 
 
-const fetch=require("isomorphic-fetch")
+// const fetch=require("isomorphic-fetch")
 
-const fetchuser=async(token,email,)=>{
-    try{
+// const fetchuser=async(token,email,)=>{
+//     try{
           
-const response=await fetch("http://localhost:5000/api/user/update/me",{
-    method:"POST",
-    headers:{"content-type":"application/json"},
-    body:JSON.stringify({
-   token:token,
-        email:email,
+// const response=await fetch("http://localhost:5000/api/user/update/me",{
+//     method:"POST",
+//     headers:{"content-type":"application/json"},
+//     body:JSON.stringify({
+//    token:token,
+//         email:email,
 
 
-    })
-})
-const result=await response.text()
-console.log(result)
+//     })
+// })
+// const result=await response.text()
+// console.log(result)
 
 
-    }catch(err){
-        console.log(err)
-    }
+//     }catch(err){
+//         console.log(err)
+//     }
 
-}
+// }
 
-fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com','nwofe chiemelie',)
+// fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com','nwofe chiemelie',)
 
 
 

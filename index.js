@@ -14,11 +14,11 @@ const updateuser=require('./routers/updateuser')
 const updateuserbalance=require("./routers/arithmetics")
 const deposit=require("./routers/deposit")
 const viewbalance=require('./routers/viewbalance')
-const list=require('./routers/list')
+
 // console.log(User.validatelogin)
 app.use(express.json())
 
-app.use('/api/list',list)
+
 
 app.use("/uploads", express.static('./uploads'))
 

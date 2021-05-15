@@ -17,7 +17,7 @@
             const formData = new FormData()
             formData.append('myFile', files[0])
 
-            const response = await fetch('/api/list', {
+            const response = await fetch('/api/users/listings/post', {
                 method: 'POST',
                 body: formData
             })
@@ -34,3 +34,149 @@
 </body>
 
 </html>
+
+
+
+
+
+<script>
+
+ const createFormData = (photo, body) => {
+  const data = new FormData();
+
+   data.append('photo', {
+     name: photo.fileName,
+     type: photo.type,
+     uri:
+       Platform.OS === 'android' ? photo.uri : photo.uri.replace('file://', ''),
+   });
+
+  Object.keys(body).forEach((key) => {
+    data.append(key, body[key]);
+   });
+
+   return data;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// handleUploadPhoto = () => {
+//   fetch('http://localhost:3000/api/upload', {
+//     method: 'POST',
+//     body: createFormData(this.state.photo, { userId: '123' }),
+//   })
+//     .then((response) => response.json())
+//     .then((response) => {
+//       console.log('upload succes', response);
+//       alert('Upload success!');
+//       this.setState({ photo: null });
+//     })
+//     .catch((error) => {
+//       console.log('upload error', error);
+//       alert('Upload failed!');
+//     });
+// };
+
+</script>
+
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uploadimage</title>
+</head>
+<body>
+    <script>
+    const createFormData = (photo, body) => {
+        const data = new FormData();
+
+        data.append('photo', {
+            name: photo.name,
+            size:photo.size,
+            type: photo.type,
+            uri:photo.name
+            // uri:
+            //     Platform.OS === 'android' ? photo.uri : photo.uri.replace('file://', ''),
+        });
+
+        Object.keys(body).forEach((key) => {
+            data.append(key, body[key]);
+        });
+
+        return data;
+    };
+
+
+
+
+    
+
+handleUploadPhoto = (photo) => {
+  fetch('http://localhost:5000/api/list', {
+    method: 'POST',
+    body: createFormData(photo, { userId: '123' }),
+  })
+    .then((response) => response.text())
+    .then((response) => {
+      console.log('upload succes', response);
+      alert('Upload success!');
+      this.setState({ photo: null });
+    })
+    .catch((error) => {
+      console.log('upload error', error);
+      alert('Upload failed!');
+    });
+};
+
+
+
+    checkphoto=()=>{
+        event.preventDefault()
+const file=document.getElementById("file").files
+handleUploadPhoto(file[0])
+console.log(file[0].name)
+    }
+    </script>
+   <form>
+       <input type="file" name="file" id="file" >
+       <input type="submit" onclick="checkphoto()">
+   </form> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+ -->
