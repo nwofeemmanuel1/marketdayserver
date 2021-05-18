@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -179,4 +179,67 @@ console.log(file[0].name)
 
 
 
- -->
+ --> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" id="fileUpload" />
+    <script>
+        const handleImageUpload = async (event) => {
+        //     const formData = new FormData()
+        //     //  Blob, event.target.files[0]
+        //      const blob = new File([], { type: event.target.files[0].type,  })
+        //      blob.append({name:event.target.files[0].name})
+        //    console.log(blob)
+           
+            // var File=new()
+            // [event.target.files[0].size, event.target.files[0].type], { name: event.target.files[0].name, size: event.target.files[0].size, type: event.target.files[0].type }, text = { name: event.target.files[0].name }
+            // console.log(event.target.files[0],blob )
+            // console.log(  event.target.files[0], formData.append("photo",new Blob([file=File=[{name: event.target.files[0].name, size: event.target.files[0].size,type:event.target.files[0].type, webkitRelativePath:""}]],{type: event.target.files[0].type},{contentType: event.target.files[0].type}  )))
+            // const files = event.target.files
+            // const formData = new FormData()
+            // formData.append('myFile',files[0])
+            // files = { name: event.target.files[0].name, size: event.target.files[0].size, type: event.target.files[0].type }, name = event.target.files[0].name, size = event.target.files[0].size, type = event.target.files[0].type
+
+            // const response = await fetch('/api/users/listings/post', {
+            //     method: 'POST',
+            //     body:blob
+            // })
+
+            // const result = await response.text()
+            // console.log(result)
+            // alert(event.target.files[0].name)
+ const response= await fetch(event.target.files[0].name)
+ console.log(response)
+        }
+
+        document.querySelector('#fileUpload').addEventListener('change', event => {
+            handleImageUpload(event)
+        })
+    </script>
+</body>
+
+</html>

@@ -36,8 +36,10 @@ app.use('/api/user/update',updateuser)
 app.use('/api/users/balance',updateuserbalance)
 app.use('/api/users/deposit',deposit)
 app.use('/api/user/viewbalance',viewbalance)
-
-
+app.use('/',(req,res,next)=>{
+  console.log("someone connected !!")
+  next()
+})
 
 app.get('/',(req,res)=>{
     res.send('marketday is coming !!!!')
@@ -61,3 +63,10 @@ app.listen(port, ()=>console.log("running..."))
 
 
 
+
+
+
+
+//  console.log(  event.target.files[0], formData.append("photo",new Blob(['name size type'], {name: event.target.files[0].name, size: event.target.files[0].size, type: event.target.files[0].type}, )))
+
+            // console.log(  event.target.files[0], formData.append("photo",new Blob([files= event.target.files[0],name= event.target.files[0].name, size= event.target.files[0].size, type=event.target.files[0].type ], {name: event.target.files[0].name, size: event.target.files[0].size, type: event.target.files[0].type}, )))

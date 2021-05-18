@@ -27,10 +27,20 @@ const uploads = multer({ storage: storage, fileFilter: filefilter })
 
 
 
-router.post('/post', uploads.any("myFile"), (req, res) => {
-   res.send('created' + req.files[0])
+// router.post('/post', uploads.any("photo",1), (req, res) => {
+//    console.log( req.files)
+//    res.send('created' + req.files[0])
 
-})
+// })
+
+
+router.post('/post', uploads.array('photo', 3), (req, res) => {
+  console.log('file', req.files);
+  console.log('body', req.body);
+  res.status(200).json({
+    message:req.files ,
+  });
+});
 
 
 
