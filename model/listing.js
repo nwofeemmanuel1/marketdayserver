@@ -12,19 +12,12 @@ const listingSchema=new mongoose.Schema({
     required:true,
     maxlength:1024
 },
-secondsource:{
-    type:String,
-    maxlength:1024
-},
+secondsource: String,
+ 
+thirdsource:String,
 
-thirdsource:{
-    type:String,
-    maxlength:1024
-},
-fourthsource:{
-    type:String,
-    maxlength:1024
-},
+fourthsource:String,
+ 
 
 
     name:{

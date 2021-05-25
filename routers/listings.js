@@ -37,7 +37,7 @@ router.post('/',protect, async (req, res) => {
 res.json({message:"success",error:false})
 
         }catch(err){
-            res.json({errMessage:err.message,error:true})
+            res.json({errMessage:err.message,  error:true})
 
         }
 
