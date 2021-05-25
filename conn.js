@@ -129,11 +129,22 @@
 
 const fetch=require("isomorphic-fetch")
 const fetchuser=async()=>{
-
-
-
-
-const response=await fetch("http://localhost:5000" )
+const response=await fetch("http://localhost:5000/api/users/listings",{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+        source:"source",
+        secondsource:"secondsource",
+        thirdsource:"thirdsource",
+        fourthsource:"fourthsource",
+        name:"name",
+        price:20,
+     description:"string description",
+     category:"null",
+     seller:"seller@gmail.com",
+     user:"609503d28c825c00644c0b33"
+    })
+} )
 
 
 const result=await response.text()

@@ -36,13 +36,10 @@ app.use('/api/user/update',updateuser)
 app.use('/api/users/balance',updateuserbalance)
 app.use('/api/users/deposit',deposit)
 app.use('/api/user/viewbalance',viewbalance)
-app.use('/',(req,res,next)=>{
-  console.log("someone connected !!")
-  next()
-})
+
 
 app.get('/',(req,res)=>{
-    res.send('marketday is coming !!!!')
+    res.send('updated just now !')
 })
 
 app.post("/api/listings",protect,async(req,res)=>{
