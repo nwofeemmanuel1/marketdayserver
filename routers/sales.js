@@ -79,59 +79,59 @@ Router.post("/viewpurchase", protectRoute, async (req, res) => {
 // protectRoute,
 
 
-Router.post("/",  async(req, res) => {
-if(req.body.product ){
+Router.post("/", rotectRoute, async (req, res) => {
+    if (req.body.product) {
 
 
-    for (let product of req.body.product){
-        // console.log(product)
-      isvalid=validatesales(product.seller,req.body.buyer, req.body.totalPrice,product.Listing)
-      if(isvalid !==true)return res.status(400).json({error:true,errMessage:isvalid})   
+        for (let product of req.body.product) {
+            // console.log(product)
+            isvalid = validatesales(product.seller, req.body.buyer, req.body.totalPrice, product.Listing)
+            if (isvalid !== true) return res.status(400).json({ error: true, errMessage: isvalid })
+        }
+
+        for (let product of req.body.product)
+            if (product.seller === req.body.buyer) return res.json({ error: true, match: true, errMessage: "Please You cant buy your own Product Make sure its excluded from Cart" })
+
+        try {
+            const user = await User.findOne({ email: req.body.buyer })
+            if (user) {
+
+
+                if (user.balance >= parseInt(req.body.totalPrice)) {
+                    user.set({
+                        balance: user.balance - parseInt(req.body.totalPrice)
+                    })
+                    try {
+                        req.body.product.forEach(async product => {
+                            sold = await new Sales({
+                                seller: product.seller,
+                                buyer: req.body.buyer,
+                                Listing: product.Listing
+                            })
+                            const finalResult = await sold.save()
+                        })
+                        const userResult = await user.save()
+                        return res.json({ error: false, message: "success", accomplished: true })
+                    } catch (err) {
+                        res.status(400).json({ error: true, errMessage: err.message })
+                    }
+
+                } return res.json({ error: true, errMessage: "Insufficient balance add Fund and try again" })
+
+
+
+            } return res.json({ error: true, errMessage: "unexpected Error database access is denied" })
+
+
+        } catch (err) {
+            return res.status(400).json({ error: true, errMessage: err.message })
+        }
+
+
+
+    } else {
+        return res.status(400).json({ error: true, errMessage: "No Product Found" })
     }
-
- for (let product of req.body.product)
- if(product.seller ===req.body.buyer) return res.json({error:true,match:true, errMessage:"Please You cant buy your own Product Make sure its excluded from Cart"})
- 
- try{
-   const user=await User.findOne({email:req.body.buyer}) 
-   if(user) {
-
-
- if(user.balance >= parseInt(req.body.totalPrice)){
- user.set({
-        balance:user.balance - parseInt(req.body.totalPrice)
- })
-try{
-req.body.product.forEach(async product=>{  
- sold=await new Sales({
-    seller:product.seller,
-    buyer:req.body.buyer,
-    Listing:product.Listing
- })
- const finalResult=await sold.save()
-})
- const userResult=await user.save()
-return res.json({error:false,message:"success",accomplished:true})
-}catch(err){
-    res.status(400).json({error:true,errMessage:err.message})
-}
-
- }return res.json({error:true,errMessage:"Insufficient balance add Fund and try again"})
-
-
-
-   }return res.json({error:true,errMessage:"unexpected Error database access is denied"})
-
-
- }catch(err){
-   return  res.status(400).json({error:true,errMessage:err.message})
- }
-
-
-
-}else{
-return res.status(400).json({error:true,errMessage:"No Product Found"})
-}
 
 
 })
