@@ -39,7 +39,7 @@ app.use('/api/user/viewbalance',viewbalance)
 
 
 app.get('/',(req,res)=>{
-    res.send('updated just now !')
+    res.send('marketdayserver just updated to give a better support of a way of  buying product!')
 })
 
 app.post("/api/listings",protect,async(req,res)=>{

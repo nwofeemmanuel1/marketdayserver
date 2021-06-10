@@ -1,37 +1,38 @@
-// const fetch=require("isomorphic-fetch")
-// const fetchuser=async(username,email,pasword)=>{
 
-// try{
+const fetch=require("isomorphic-fetch")
+const fetchuser=async(username,email,pasword)=>{
 
-
-// const response=await fetch("https://marketdayserver.herokuapp.com/api/register",{
-//     method:"POST",
-//     headers:{"content-type":"application/json"},
-//     body:JSON.stringify({
-//         username:username,
-//         email:email,
-//         pasword:pasword
-//     })
-// })
-
-// const result=await response.json()
-// console.log(result)
-
-// }catch(err){
-//     console.log(err.message)
-// }
+try{
 
 
-// }
-// // "gsgfysygy"
+const response=await fetch("http://localhost:5000/api/register",{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+        username:username,
+        email:email,
+        pasword:pasword
+    })
+})
 
-// fetchuser('nwofe Emmanuel','enwofe@gmail.com', 'desolidesk')
+const result=await response.json()
+console.log(result)
+
+}catch(err){
+    console.log(err.message)
+}
 
 
+}
+"gsgfysygy"
 
+fetchuser('nwofe Emmanuel','enwofe@gmail.com', 'desolidesk')
 
 
 
+
+
+// /api/listings
 
 
 
@@ -95,38 +96,38 @@
 // "https://marketdayserver.herokuapp.com/api/users/listings"
 
 
-const fetch=require("isomorphic-fetch")
- const fetchuser=async( token,seller,itemName,description,price,category)=>{
+// const fetch=require("isomorphic-fetch")
+//  const fetchuser=async( token,seller,itemName,description,price,category)=>{
 
- try{
+//  try{
 
 
- const response=await fetch("http://localhost:5000/api/users/listings",{
-    method:"POST",
-  headers:{"content-type":"application/json"},
-   body:JSON.stringify({
-       token,
-     seller,
-     itemName,
-     description,
-     price,
-     category  
+//  const response=await fetch("http://localhost:5000/api/users/listings",{
+//     method:"POST",
+//   headers:{"content-type":"application/json"},
+//    body:JSON.stringify({
+//        token,
+//      seller,
+//      itemName,
+//      description,
+//      price,
+//      category  
       
-    })
-})
+//     })
+// })
 
-const result=await response.json()
-console.log(result)
+// const result=await response.json()
+// console.log(result)
 
-}catch(err){
-    console.log(err.message)
-}
+// }catch(err){
+//     console.log(err.message)
+// }
 
 
-}
-"gsgfysygy"
+// }
+// "gsgfysygy"
 
-fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com',"shoes",'my first item',"20",'web')
+// fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com',"shoes",'my first item',"20",'web')
 
 
 // https://marketdayserver.herokuapp.com
