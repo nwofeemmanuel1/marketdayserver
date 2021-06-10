@@ -79,7 +79,7 @@ Router.post("/viewpurchase", protectRoute, async (req, res) => {
 // protectRoute,
 
 
-Router.post("/", rotectRoute, async (req, res) => {
+Router.post("/", protectRoute, async (req, res) => {
     if (req.body.product) {
 
 
