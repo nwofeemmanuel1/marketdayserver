@@ -11,17 +11,15 @@ const cool = require('cool-ascii-faces');
 const sales=require('./routers/sales')
 const mailer=require("./routers/sendmail")
 const updateuser=require('./routers/updateuser')
-const updateuserbalance=require("./routers/arithmetics")
 const deposit=require("./routers/deposit")
 const viewbalance=require('./routers/viewbalance')
-
+const verifyProduct=require("./routers/verifyProduct")
 // console.log(User.validatelogin)
 app.use(express.json())
 
 
 
 app.use("/uploads", express.static('./uploads'))
-
 app.use('/api/users/listings',listings)
 app.use("/api/register",register )
 
@@ -33,10 +31,9 @@ app.use("/api/login", login)
 
 app.use('/api/seller/mail',mailer)
 app.use('/api/user/update',updateuser)
-app.use('/api/users/balance',updateuserbalance)
 app.use('/api/users/deposit',deposit)
 app.use('/api/user/viewbalance',viewbalance)
-
+app.use("/api/user/verifyProduct",verifyProduct)
 
 app.get('/',(req,res)=>{
     res.send('marketdayserver just updated to give a better support of a way of  buying product!')
@@ -60,7 +57,7 @@ app.listen(port, ()=>console.log("running..."))
 
 
 
-
+// https://marketdayserver.herokuapp.com/api/users/balance
 
 
 

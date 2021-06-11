@@ -1,30 +1,30 @@
-const fetch=require("isomorphic-fetch")
-const fetchuser=async(token,seller,buyer,totalPrice,Listing)=>{
-try{
+// const fetch=require("isomorphic-fetch")
+// const fetchuser=async(token,seller,buyer,totalPrice,Listing)=>{
+// try{
 
-const response=await fetch("http://localhost:5000/api/listings/sales",{
-    method:"POST",
-    headers:{"content-type":"application/json"},
-    body:JSON.stringify({
-        token:token,
-        buyer,
-        totalPrice,
-        product:[
-            {seller:seller, Listing},
-          {seller:"seller@gmail.com", Listing},
-           {seller:"dede@gmail.com", Listing,}
-        ]
-    })
-})
+// const response=await fetch("http://localhost:5000/api/listings/sales",{
+//     method:"POST",
+//     headers:{"content-type":"application/json"},
+//     body:JSON.stringify({
+//         token:token,
+//         buyer,
+//         totalPrice,
+//         product:[
+//             {seller:seller, Listing},
+//           {seller:"seller@gmail.com", Listing},
+//            {seller:"dede@gmail.com", Listing,}
+//         ]
+//     })
+// })
 
-const result=await response.json()
-console.log(result)
+// const result=await response.json()
+// console.log(result)
 
-}catch(err){
-    console.log(err.message)
-}
-}
-fetchuser('"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ" ',"seller@gmail.com","enwofe@gmail.com",60,"608d1aa7f2723815bc5455fb")
+// }catch(err){
+//     console.log(err.message)
+// }
+// }
+// fetchuser('"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ" ',"seller@gmail.com","enwofe@gmail.com",60,"608d1aa7f2723815bc5455fb")
 
 
 //'
@@ -141,7 +141,7 @@ fetchuser('"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDA
 //      description:"string description",
 //      category:"null",
 //      seller:"seller@gmail.com",
-//      user:"609503d28c825c00644c0b33"
+//      user:"60c34364e6aad615846cdcee"
 //     })
 // } )
 
@@ -150,7 +150,8 @@ fetchuser('"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDA
 // console.log(result)
 
 // }
-// // "gsgfysygy"
+// // // "gsgfysygy"
+// // // setInterval(()=>fetchuser(),500)
 
 // fetchuser()
 
@@ -162,7 +163,56 @@ fetchuser('"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDA
 
 
 
+ const fetch=require("isomorphic-fetch")
+
+ const fetchuser=async(id)=>{
+    const response= await fetch("http://localhost:5000/api/user/verifyProduct",{
+         method:"DELETE",
+         headers:{"content-type":"application/json"},
+         body:JSON.stringify({id})
+     })
+    const result= await response.json()
+    console.log(result)
+ }
+ fetchuser('60c3435be6aad615846cdcdd')
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Remember i implemented this as a ddos attack to affect the server
+
+//  const fetch=require("isomorphic-fetch")
+
+//  const fetchuser=async()=>{
+//     const response= await fetch("http://localhost:5000/api/user/verifyProduct",{
+//          method:"DELETE",
+//          headers:{"content-type":"application/json"},
+//          body:JSON.stringify({id:'60c343575164291610578013'})
+//      })
+//     const result= await response.json()
+//     console.log(result)
+//  }
+// //  fetchuser()
+
+// //  setInterval(()=>fetchuser(),1)
+
+// for (let index=1; index <30000; index++){
+//     // console.log(index)
+//      setInterval(()=>fetchuser(),1)
+// }

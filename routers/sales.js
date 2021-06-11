@@ -68,7 +68,6 @@ Router.post("/viewpurchase", protectRoute, async (req, res) => {
         }
 
 
-
     } else {
         res.json({ errMessage: isvalid, error: true })
     }
