@@ -2,13 +2,15 @@ const express=require("express")
 const router=express.Router()
 const Listing=require("../model/listing")
 const User=require("../model/user")
+const Sales=require("../model/sales")
 const Joi=require("joi")
-
-const validateId=(id)=>{
+const protect=require("../hash/protection")
+const validateId=(id,salesId)=>{
     const schema={
-        id:Joi.string().required()
+        id:Joi.string().required(),
+        salesId:Joi.string().required()
     }
-    const result=Joi.validate({id},schema)
+    const result=Joi.validate({id,salesId},schema)
     if(result.error){ return result.error.details[0].message
 }else{
 return true 
@@ -16,19 +18,24 @@ return true
 
 }
 
-router.delete("/",async(req,res)=>{
- const isvalid=validateId(req.body.id)
+router.delete("/",protect,async(req,res)=>{
+
+ const isvalid=validateId(req.body.id,req.body.salesId)
 if(isvalid ===true){
     try{
 
 const listing=await Listing.findById(req.body.id) 
 // .select("user -_id")
 if(listing){
+    
+const sale=await Sales.findByIdAndDelete(req.body.salesId)
+if(!sale)return res.json({error:true,errMessage:" The Product You Bought No Longer Exist Please take your money Back"})
 const user=await User.findById(listing.user)
 if(user){
 user.set({
 balance:user.balance + listing.price
 })
+
 await Listing.findByIdAndDelete(req.body.id)
 await user.save()
 return res.json({error:false,message:"Product Verified successfully"})

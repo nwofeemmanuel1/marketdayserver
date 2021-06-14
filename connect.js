@@ -26,7 +26,7 @@
 // }
 // "gsgfysygy"
 
-// fetchuser('nwofe Emmanuel','enwofe@gmail.com', 'desolidesk')
+// fetchuser('nwofe Emmanuel','enwofe@gmail.com', 'desolidboy1')
 
 
 
@@ -66,21 +66,21 @@
 
 
 
-// const fetch=require("isomorphic-fetch")
-// const fetchget=async(token)=>{
-// const response=await fetch("http://localhost:5000/api/listings",{
-//     method:"POST",
-//     headers:{"content-type":"application/json"},
-//     body:JSON.stringify({
+const fetch=require("isomorphic-fetch")
+const fetchget=async(token)=>{
+const response=await fetch("http://localhost:5000/api/listings",{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
       
-//        token:token
-//     })
-// })
-// const result=await response.text()
-// console.log(result)
-// }
+       token:token
+    })
+})
+const result=await response.text()
+console.log(result)
+}
 
-// fetchget('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU')
+fetchget('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU')
 
 
 
@@ -111,8 +111,11 @@
 //      itemName,
 //      description,
 //      price,
-//      category  
-      
+//      category  ,
+//       source:"https://picsum.photos.io",
+//       name:"product",
+//       user:"enwofe@gmail.com"
+
 //     })
 // })
 
@@ -125,7 +128,7 @@
 
 
 // }
-// "gsgfysygy"
+// // "gsgfysygy"
 
 // fetchuser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ",'enwofe@gmail.com',"shoes",'my first item',"20",'web')
 
@@ -467,15 +470,17 @@
 
 
 
- const fetch=require("isomorphic-fetch")
+//  const fetch=require("isomorphic-fetch")
 
- const fetchuser=async()=>{
-    const response= await fetch("http://localhost:5000/api/user/verifyProduct",{
-         method:"DELETE",
-         headers:{"content-type":"application/json"},
-         body:JSON.stringify({id:'60c343575164291610578013'})
-     })
-    const result= await response.json()
-    console.log(result)
- }
- fetchuser()
+//  const fetchuser=async()=>{
+//     const response= await fetch("http://localhost:5000/api/user/verifyProduct",{
+//          method:"DELETE",
+//          headers:{"content-type":"application/json"},
+//          body:JSON.stringify({id:'60c343575164291610578013'})
+//      })
+//     const result= await response.json()
+//     console.log(result)
+//  }
+//  fetchuser()
+
+

@@ -1,3 +1,75 @@
+//registration///
+
+// const fetch=require("isomorphic-fetch")
+// const fetchuser=async(username,email,pasword)=>{
+
+// try{
+
+
+// const response=await fetch("http://localhost:5000/api/register",{
+//     method:"POST",
+//     headers:{"content-type":"application/json"},
+//     body:JSON.stringify({
+//         username:username,
+//         email:email,
+//         pasword:pasword
+//     })
+// })
+
+// const result=await response.json()
+// console.log(result)
+
+// }catch(err){
+//     console.log(err.message)
+// }
+
+
+// }
+// "gsgfysygy"
+
+// fetchuser('nwofe Emmanuel','buyer@gmail.com', 'desolidboy1')
+
+
+//creatring a listing ===---
+
+const fetch=require("isomorphic-fetch")
+const fetchuser=async()=>{
+const response=await fetch("http://localhost:5000/api/users/listings",{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+        token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU",
+        source:"HAHAHAHAHA",
+        secondsource:"HAHAHA can it sort ",
+        thirdsource:"HAHA the same applies here",
+        fourthsource:"",
+        name:"latest update",
+        price:20,
+     description:"string description",
+     category:"null",
+     seller:"enwofe@gmail.com.com",
+     user:"60c726a9afd27015540303c9"
+    })
+} )
+
+
+const result=await response.text()
+console.log(result)
+
+}
+// // "gsgfysygy"
+// // setInterval(()=>fetchuser(),500)
+
+fetchuser()
+
+
+
+
+
+
+
+//creating a sale ----
+
 // const fetch=require("isomorphic-fetch")
 // const fetchuser=async(token,seller,buyer,totalPrice,Listing)=>{
 // try{
@@ -11,8 +83,6 @@
 //         totalPrice,
 //         product:[
 //             {seller:seller, Listing},
-//           {seller:"seller@gmail.com", Listing},
-//            {seller:"dede@gmail.com", Listing,}
 //         ]
 //     })
 // })
@@ -24,13 +94,71 @@
 //     console.log(err.message)
 // }
 // }
-// fetchuser('"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGMwMDE3MDNjY2RiMDAyMjg0MTMzYSIsImlhdCI6MTYxOTc5MTg5MH0.1MqY444A7uDpiL96VzLzAikDwG1UPxhha0qp3it1qSQ" ',"seller@gmail.com","enwofe@gmail.com",60,"608d1aa7f2723815bc5455fb")
+// fetchuser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYzcyNmE5YWZkMjcwMTU1NDAzMDNjOSIsImlhdCI6MTYyMzY2NDI5N30.gfoXHYYSIapS9E9w_MITuHlR1g-Otf_NDxgAVJ3x0ts',"enwofe@gmail.com","buyer@gmail.com",20,"60c72dec7d6eb00e18a17aed")
 
 
-//'
+
+//-----verifying a sale
+//remember ------------
+
+//  const fetch=require("isomorphic-fetch")
+
+//  const fetchuser=async( token,id,salesId)=>{
+//     const response= await fetch("http://localhost:5000/api/user/verifyProduct",{
+//          method:"DELETE",
+//          headers:{"content-type":"application/json"},
+//          body:JSON.stringify({token,id,salesId})
+//      })
+//     const result= await response.json()
+//     console.log(result)
+//  }
+//  fetchuser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYzcyNmE5YWZkMjcwMTU1NDAzMDNjOSIsImlhdCI6MTYyMzY2NDI5N30.gfoXHYYSIapS9E9w_MITuHlR1g-Otf_NDxgAVJ3x0ts',"60c72dec7d6eb00e18a17aed","60c7340a1dc0151694fc1916")
 
 
-//'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU',"","","608d1aa7f2723815bc5455fb"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -125,60 +253,6 @@
 
 
 
-// const fetch=require("isomorphic-fetch")
-// const fetchuser=async()=>{
-// const response=await fetch("http://localhost:5000/api/users/listings",{
-//     method:"POST",
-//     headers:{"content-type":"application/json"},
-//     body:JSON.stringify({
-//         token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU",
-//         source:"unknown",
-//         secondsource:2,
-//         thirdsource:"",
-//         fourthsource:"",
-//         name:"name",
-//         price:20,
-//      description:"string description",
-//      category:"null",
-//      seller:"seller@gmail.com",
-//      user:"60c34364e6aad615846cdcee"
-//     })
-// } )
-
-
-// const result=await response.text()
-// console.log(result)
-
-// }
-// // // "gsgfysygy"
-// // // setInterval(()=>fetchuser(),500)
-
-// fetchuser()
-
-
-
-
-
-
-
-
-
- const fetch=require("isomorphic-fetch")
-
- const fetchuser=async(id)=>{
-    const response= await fetch("http://localhost:5000/api/user/verifyProduct",{
-         method:"DELETE",
-         headers:{"content-type":"application/json"},
-         body:JSON.stringify({id})
-     })
-    const result= await response.json()
-    console.log(result)
- }
- fetchuser('60c3435be6aad615846cdcdd')
-
-
-
-
 
 
 
@@ -215,4 +289,21 @@
 // for (let index=1; index <30000; index++){
 //     // console.log(index)
 //      setInterval(()=>fetchuser(),1)
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//toke 
+//  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYzcyNmE5YWZkMjcwMTU1NDAzMDNjOSIsImlhdCI6MTYyMzY2NDI5N30.gfoXHYYSIapS9E9w_MITuHlR1g-Otf_NDxgAVJ3x0ts'
