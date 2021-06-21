@@ -5,4 +5,3 @@ function generatetoken(userid){
    return token
 }
 module.exports=generatetoken
-
