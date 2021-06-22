@@ -57,7 +57,7 @@ const result=await response.text()
 console.log(result)
 
 }
-// // "gsgfysygy"
+
 // // setInterval(()=>fetchuser(),500)
 
 fetchuser()
