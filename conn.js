@@ -32,35 +32,36 @@
 
 //creatring a listing ===---
 
-// const fetch=require("isomorphic-fetch")
-// const fetchuser=async()=>{
-// const response=await fetch("http://localhost:5000/api/users/listings",{
-//     method:"POST",
-//     headers:{"content-type":"application/json"},
-//     body:JSON.stringify({
-//         token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU",
-//         source:"HAHAHAHAHA",
-//         secondsource:"HAHAHA can it sort ",
-//         thirdsource:"HAHA the same applies here",
-//         fourthsource:"",
-//         name:"latest update",
-//         price:20,
-//      description:"string description",
-//      category:"null",
-//      seller:"enwofe@gmail.com.com",
-//      user:"60c726a9afd27015540303c9"
-//     })
-// } )
+const fetch=require("isomorphic-fetch")
+const fetchuser=async()=>{
+const response=await fetch("http://localhost:5000/api/users/listings",{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({
+        token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODAyNTBkNTFkYzc1MThkMGM0YjAzOCIsImlhdCI6MTYxOTM2NTcwMH0.RbOMuCMaLJgNKQ3WDLSTP7w5duNu5wZY-nszRveytvU",
+      //   uploadImage:["haha","haha","heh2",],
+   //      source:"HAHAHAHAHA",
+   //      secondsource:"HAHAHA can it sort ",
+   //      thirdsource:"HAHA the same applies here",
+   //      fourthsource:"",
+        name:"latest update",
+        price:20,
+     description:"string description",
+     category:"null",
+     seller:"enwofe@gmail.com.com",
+     user:"60c726a9afd27015540303c9"
+    })
+} )
 
 
-// const result=await response.text()
-// console.log(result)
+const result=await response.text()
+console.log(result)
 
-// }
-// // // "gsgfysygy"
-// // // setInterval(()=>fetchuser(),500)
+}
+// // "gsgfysygy"
+// // setInterval(()=>fetchuser(),500)
 
-// fetchuser()
+fetchuser()
 
 
 
@@ -98,21 +99,21 @@
 
 
 
-//-----verifying a sale
-//remember ------------
+// //-----verifying a sale
+// //remember ------------
 
- const fetch=require("isomorphic-fetch")
+//  const fetch=require("isomorphic-fetch")
 
- const fetchuser=async( token,email,amount)=>{
-    const response= await fetch("http://localhost:5000/api/user/viewbalance/debit",{
-         method:"PUT",
-         headers:{"content-type":"application/json"},
-         body:JSON.stringify({token,email,amount})
-     })
-    const result= await response.json()
-    console.log(result)
- }
- fetchuser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYzcyNmE5YWZkMjcwMTU1NDAzMDNjOSIsImlhdCI6MTYyMzY2NDI5N30.gfoXHYYSIapS9E9w_MITuHlR1g-Otf_NDxgAVJ3x0ts',"buyer@gmail.com",2)
+//  const fetchuser=async( token,email,amount)=>{
+//     const response= await fetch("http://localhost:5000/api/user/viewbalance/debit",{
+//          method:"PUT",
+//          headers:{"content-type":"application/json"},
+//          body:JSON.stringify({token,email,amount})
+//      })
+//     const result= await response.json()
+//     console.log(result)
+//  }
+//  fetchuser('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYzcyNmE5YWZkMjcwMTU1NDAzMDNjOSIsImlhdCI6MTYyMzY2NDI5N30.gfoXHYYSIapS9E9w_MITuHlR1g-Otf_NDxgAVJ3x0ts',"buyer@gmail.com",2)
 
 
 

@@ -60,8 +60,6 @@ const Joi=require("joi")
 const validatelisting=(req)=>{
 
 const schema={
-source:Joi.string().max(1024).required(),
-
 
 name:Joi.string().min(3).max(1000).required(),
 price:Joi.number().min(0).required(),
@@ -73,7 +71,7 @@ user:Joi.string().required()
 }
 
 const result=Joi.validate({
-    source:req.source, name:req.name,price:req.price,  description:req.description,category:req.category,
+   name:req.name,price:req.price,  description:req.description,category:req.category,
     seller:req.seller,user:req.user
 
 },schema)
