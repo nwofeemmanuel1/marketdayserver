@@ -45,7 +45,7 @@ min:0
     category:{
         type:String,
         required:true,
-         enum:["Cosmetics","clothes", "Cameras", "null"]
+         enum:["Cosmetics","Clothes", "Cameras", "null"]
     },
 
 itemNumber:{
