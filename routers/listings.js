@@ -83,6 +83,7 @@ console.log(uploadedimage[0])
      user:req.body.user
    })
   const result= await listing.save()
+  uploadedimage=[]
 res.json({message:"success",error:false})
 
         }catch(err){
